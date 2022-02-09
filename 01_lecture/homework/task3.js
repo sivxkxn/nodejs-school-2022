@@ -1,0 +1,3 @@
+function searchSerial(arr, val){
+    
+}
