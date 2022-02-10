@@ -1,4 +1,4 @@
-function searchSerial(arr: Array<number | string>, val: number | string) {
+function searchSerial(arr: Array<number>, val: number): number {
   let counter: number = 0;
   let arrayOfCounts: Array<number> = [];
   for (let i = 0; i < arr.length; i++) {
@@ -9,5 +9,5 @@ function searchSerial(arr: Array<number | string>, val: number | string) {
     arrayOfCounts.push(counter);
     counter = 0;
   }
-  return arrayOfCounts.sort((a, b) => a - b).pop();
+  return arrayOfCounts.sort((a: number, b: number): number => a - b).pop();
 }

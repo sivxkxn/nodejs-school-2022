@@ -8,7 +8,7 @@ function wrapper(fn: Function): Function {
   return function (): number {
     const resultOfOperation: number = fn.apply(this, arguments);
     const foundObj: IArgumentsAndResult = bufferOfCached.find(
-      (x) =>
+      (x: IArgumentsAndResult): boolean =>
         x.result === resultOfOperation &&
         x.args.join("") === [...arguments].join("")
     );
