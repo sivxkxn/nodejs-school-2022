@@ -1,6 +1,6 @@
-function searchSerial(arr, val) {
-  let counter = 0;
-  let arrayOfCounts = [];
+function searchSerial(arr: Array<number | string>, val: number | string) {
+  let counter: number = 0;
+  let arrayOfCounts: Array<number> = [];
   for (let i = 0; i < arr.length; i++) {
     while (arr[i] === val) {
       counter++;
