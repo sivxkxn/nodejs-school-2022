@@ -1,15 +1,10 @@
 function arrayMutateRemove<Type>(
   arr: Array<Type>,
-  func: Function
+  predicat: (element: Type) => boolean
 ): Array<Type> {
-  const removedElements: Array<Type> = [];
-  for (let i = 0; i < arr.length; i++) {
-    const isRemoved = func.call(this, arr[i]);
-    if (isRemoved) {
-      removedElements.push(arr[i]);
-      arr.splice(i, 1);
-      i = i - 1;
-    }
-  }
-  return removedElements;
+  return arr.reduce(
+    (acc, currentElement, index) =>
+      predicat(currentElement) ? [...acc, arr.splice(index, 1)[0]] : acc,
+    [] as Array<Type>
+  );
 }
